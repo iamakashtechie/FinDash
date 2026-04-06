@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useApp } from '../context/AppContext'
 import { EXPENSE_CATEGORIES, INCOME_CATEGORIES } from '../data/mockData'
 
@@ -74,13 +75,13 @@ export default function TransactionModal() {
 
   if (!modal) return null;
 
-  return (
+  return createPortal(
     <div
       onClick={onOverlayClick}
       role="dialog"
       aria-modal="true"
       aria-labelledby="transaction-modal-title"
-      className="fixed inset-0 bg-[#070C18CC] flex items-center justify-center z-100 p-6"
+      className="fixed inset-0 bg-[#070C18CC] flex items-center justify-center z-[100] p-6"
     >
       <div className="bg-card border border-border rounded-2xl p-7 w-full max-w-115 max-h-[90vh] overflow-y-auto shadow-[0_24px_80px_rgba(0,0,0,0.5)]">
         {/* Header */}
@@ -190,6 +191,7 @@ export default function TransactionModal() {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
