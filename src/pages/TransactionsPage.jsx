@@ -12,18 +12,18 @@ export default function TransactionsPage() {
   return (
     <div>
       {/* Quick stats */}
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-3.5 mb-6">
-        <div className="card-base flex flex-col gap-1.5">
-          <span className="text-[0.688rem] text-muted uppercase tracking-[0.4px] font-medium">Total Transactions</span>
-          <span className="text-[1.5rem] font-bold text-text font-mono">{transactions.length}</span>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 mb-6">
+        <div className="card-hover card-base flex flex-col">
+          <span className="text-[.75rem] text-muted font-medium tracking-[0.4px] uppercase mb-2.5">Total Transactions</span>
+          <span className="font-mono text-[1.5rem] font-semibold text-text tracking-[-0.5px]">{transactions.length}</span>
         </div>
-        <div className="card-base flex flex-col gap-1.5">
-          <span className="text-[.688rem] text-muted uppercase tracking-[0.4px] font-medium">Total Income</span>
-          <span className="text-[1.5rem] font-bold text-green font-mono">{fmtINR(totalIncome)}</span>
+        <div className="card-hover card-base flex flex-col">
+          <span className="text-[.75rem] text-muted font-medium tracking-[0.4px] uppercase mb-2.5">Total Income</span>
+          <span className="font-mono text-[1.5rem] font-semibold text-green tracking-[-0.5px]">{fmtINR(totalIncome)}</span>
         </div>
-        <div className="card-base flex flex-col gap-1.5">
-          <span className="text-[.688rem] text-muted uppercase tracking-[0.4px] font-medium">Total Expenses</span>
-          <span className="text-[1.5rem] font-bold text-red font-mono">{fmtINR(totalExpense)}</span>
+        <div className="card-hover card-base flex flex-col">
+          <span className="text-[.75rem] text-muted font-medium tracking-[0.4px] uppercase mb-2.5">Total Expenses</span>
+          <span className="font-mono text-[1.5rem] font-semibold text-red tracking-[-0.5px]">{fmtINR(totalExpense)}</span>
         </div>
       </div>
 
